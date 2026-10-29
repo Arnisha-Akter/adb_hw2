@@ -1,0 +1,13 @@
+# Compiled Java class files
+*.class
+bin/
+
+# Credentials / local connection settings (do not commit passwords!)
+src/ConnectionFactory.java
+
+# OS & IDE files
+.DS_Store
+.idea/
+*.iml
+.vscode/
+
