@@ -40,7 +40,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * Aufruf: java -cp ".;postgresql-42.7.14.jar" NoLiveLocks [tasks] [queriesPerTask] [threads]
  *
- * Basiert auf Blocking.java von Martin Schaeler (martin.schaeler@plus.ac.at).
+ *
  */
 public class NoLiveLocks {
 	public static int num_taks = 30;
@@ -92,7 +92,7 @@ public class NoLiveLocks {
 				ps.clearParameters();
 			}
 
-			int[] results = ps.executeBatch();
+			int[] results = ps.executeBatch(); //führt die gesammelten INSERTs aus. Das zurückgegebene int[] enthält die jeweiligen Ausführungsergebnisse
 			con.commit();
 			con.close();
 			System.out.println("Inserted " + results.length + " tuples");
@@ -109,7 +109,7 @@ public class NoLiveLocks {
 	static void rollbackQuietly(Connection con) {
 		try {
 			con.rollback();
-		} catch (SQLException ignored) {
+		} catch (SQLException ignored) { //ignored bezeichnet nicht den ursprünglichen Deadlock, sondern einen möglichen zusätzlichen Fehler beim Rollback
 		}
 	}
 
@@ -172,7 +172,8 @@ public class NoLiveLocks {
 			}
 		}
 
-		/** SELECT, das alle Zeilen aller Bereiche dieses Tasks sortiert nach data_id sperrt. */
+		//wichtiger Teil für LiveLocks
+		/** SELECT, das alle Zeilen aller Bereiche dieses Tasks sortiert nach data_id sperrt. */ 
 		String buildLockQuery() {
 			StringBuilder sb = new StringBuilder("SELECT data_id FROM blocking_data WHERE ");
 			for (int q = 0; q < num_queries_per_task; q++) {

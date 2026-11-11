@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *   java -cp ".;postgresql-42.7.14.jar" RestartBlocking [tasks] [queriesPerTask] [threads]
  *   z.B. java -cp ".;postgresql-42.7.14.jar" RestartBlocking 50 5 8
  *
- * Basiert auf Blocking.java von Martin Schaeler (martin.schaeler@plus.ac.at).
+ * 
  */
 public class RestartBlocking {
 	public static int num_taks = 30;
