@@ -1,13 +1,16 @@
-# Compiled Java class files
+# Compiled Java class files & build artifacts
 *.class
 bin/
+**/bin/
 
-# Credentials / local connection settings (do not commit passwords!)
-src/ConnectionFactory.java
+# Sensitive environment credentials (NEVER commit to git!)
+**/.env
+**/.env.local
+**/.env.*.local
+adb_hw2/src/ConnectionFactory.java
 
 # OS & IDE files
 .DS_Store
 .idea/
 *.iml
 .vscode/
-
