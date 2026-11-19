@@ -1,4 +1,4 @@
-# Advanced Database Systems (Winter 2026) - ADB_HW
+# Advanced Database Systems (Winter 2026) - ADB-HW
 
 This repository contains the completed assignments for Advanced Database Systems.
 
@@ -7,7 +7,7 @@ This repository contains the completed assignments for Advanced Database Systems
 ## 📁 Repository Structure
 
 ```text
-ADB_HW/
+ADB-HW/
 ├── adb_hw2/                         # Homework 2
 │   ├── lib/postgresql-42.2.18.jar   # PostgreSQL JDBC Driver
 │   ├── src/
