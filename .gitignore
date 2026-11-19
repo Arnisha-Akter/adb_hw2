@@ -7,7 +7,7 @@ bin/
 **/.env
 **/.env.local
 **/.env.*.local
-adb_hw2/src/ConnectionFactory.java
+src/ConnectionFactory.java
 
 # OS & IDE files
 .DS_Store
